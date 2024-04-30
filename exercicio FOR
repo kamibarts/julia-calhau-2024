@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    float nota;
+
+    for (int tentativa = 0; tentativa < 3; tentativa++) {
+        printf("Digite uma nota de 0 a 10: ");
+        scanf("%f", &nota);
+
+        if (nota >= 0 && nota <= 10) {
+            printf("Nota válida: %.2f\n", nota);
+            return 0;
+        } else {
+            printf("Valor inválido! A nota deve estar entre 0 e 10.\n");
+        }
+    }
+
+    printf("Limite de tentativas excedido. Encerrando o programa.\n");
+    return 0;
+}
