@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+float calcular_peso_ideal(char sexo, float peso) {
+    float peso_ideal;
+    if (sexo == 'M') {
+        peso_ideal = (peso - 100) * 0.9;
+    } else if (sexo == 'F') {
+        peso_ideal = (peso - 100) * 0.85;
+    } else {
+        printf("Por favor, insira um sexo válido ('M' para masculino ou 'F' para feminino)\n");
+        return -1; // Valor inválido para indicar erro
+    }
+    return peso_ideal;
+}
+
+int main() {
+    char sexo;
+    float peso;
+
+    printf("Digite o sexo (M ou F): ");
+    scanf(" %c", &sexo);
+
+    printf("Digite o peso: ");
+    scanf("%f", &peso);
+
+    float peso_ideal = calcular_peso_ideal(sexo, peso);
+
+    if (peso_ideal != -1) {
+        printf("O peso ideal é: %.2f\n", peso_ideal);
+    }
+
+    return 0;
+}
